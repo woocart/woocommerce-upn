@@ -131,6 +131,7 @@ namespace WooCart\UPNalog {
                 if ($this->instructions) {
                     echo wp_kses_post(wpautop(wptexturize($this->instructions)) . PHP_EOL);
                 }
+                $this->genUPNDescription($order);
                 $this->genUPN($order);
             }
 
