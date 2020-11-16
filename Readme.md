@@ -1,12 +1,16 @@
-# WooCommerce UPN Nalog
+# WooCommerce UPN nalog
 
-Prikaže podatke za nakazilo in UPN Nalog z QR kodo ob koncu naročila, v sporočilu da je bilo naročilo sprejeto in pod pregledom naročil.
+Prikaže podatke za nakazilo in UPN nalog s QR kodo ob koncu naročila, v emailu za potrditev naročila in pod pregledom naročil.
 
 ![alt](pic1.png)
 
-## Nastavitev
+## Namestitev
 
-Za delovanje potrebuje nastavljen BACS (Direct Bank Transfer payment modul). Pozor IBAN mora biti pravilen drugače se obrazec ne prikaže.
+**Prenesi [zadnjo verzijo](https://github.com/woocart/woocommerce-upn/releases/latest) »**
+
+Za delovanje potrebuje nastavljen BACS (Direct Bank Transfer payment modul). 
+
+Pozor! IBAN mora biti pravilen drugače se obrazec ne prikaže.
 
 Za prilagajanje se lahko uprabi naslednje filtre:
 
