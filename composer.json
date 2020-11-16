@@ -1,0 +1,5 @@
+{
+    "require": {
+        "media24si/upn-generator": "^2.0"
+    }
+}

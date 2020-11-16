@@ -1,0 +1,111 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "4f070c835ac4b552a77bc349e90ec2c2",
+    "packages": [
+        {
+            "name": "media24si/upn-generator",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Media24si/UpnGenerator.git",
+                "reference": "9ecec9149c3e3a359fd4692f18062d6fbf46e861"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Media24si/UpnGenerator/zipball/9ecec9149c3e3a359fd4692f18062d6fbf46e861",
+                "reference": "9ecec9149c3e3a359fd4692f18062d6fbf46e861",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": "^7.4",
+                "werneckbh/qr-code": "2.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Media24si\\UpnGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bostjan Oblak",
+                    "email": "bostjan@muha.cc"
+                }
+            ],
+            "description": "UPN form generator",
+            "homepage": "https://github.com/Media24si/UpnGenerator",
+            "keywords": [
+                "upn"
+            ],
+            "support": {
+                "issues": "https://github.com/Media24si/UpnGenerator/issues",
+                "source": "https://github.com/Media24si/UpnGenerator/tree/v2.0.1"
+            },
+            "time": "2020-11-08T16:30:15+00:00"
+        },
+        {
+            "name": "werneckbh/qr-code",
+            "version": "2.1.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/werneckbh/qr-code.git",
+                "reference": "ec66df0ebd5a3e1ea895bb5fba82ab9c3b9ff8f0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/werneckbh/qr-code/zipball/ec66df0ebd5a3e1ea895bb5fba82ab9c3b9ff8f0",
+                "reference": "ec66df0ebd5a3e1ea895bb5fba82ab9c3b9ff8f0",
+                "shasum": ""
+            },
+            "require-dev": {
+                "khanamiryan/qrcode-detector-decoder": "^1.0",
+                "phpunit/phpunit": "^6.5"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers/constants.php",
+                    "src/helpers/functions.php"
+                ],
+                "psr-4": {
+                    "QR_Code\\": "src/QR_Code/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bruno Vaula Werneck",
+                    "email": "brunovaulawerneck@gmail.com"
+                }
+            ],
+            "description": "QR Code Generator for PHP",
+            "support": {
+                "issues": "https://github.com/werneckbh/qr-code/issues",
+                "source": "https://github.com/werneckbh/qr-code/tree/master"
+            },
+            "abandoned": true,
+            "time": "2018-02-04T20:29:27+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}
