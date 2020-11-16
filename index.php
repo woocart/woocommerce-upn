@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: UPN Plačilni Nalog
+Plugin Name: UPN plačilni nalog
 Plugin URI: https://woocart.com
-Description: Doda UPN plačilni nalog z QR kodo v vašo WooCommerce trgovino.
+Description: Doda UPN plačilni nalog s QR kodo v vašo WooCommerce trgovino.
 Version: 1.0.0
 Author: WooCart
 Author Email: info@woocart.com
