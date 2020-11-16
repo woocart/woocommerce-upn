@@ -1,0 +1,25 @@
+{
+  "name": "media24si/upn-generator",
+  "description": "UPN form generator",
+  "license": "MIT",
+  "keywords": [
+    "upn"
+  ],
+  "homepage": "https://github.com/Media24si/UpnGenerator",
+  "authors": [
+    {
+      "name": "Bostjan Oblak",
+      "email": "bostjan@muha.cc"
+    }
+  ],
+  "require": {
+    "php": "^7.4",
+    "ext-gd": "*",
+    "werneckbh/qr-code": "2.1.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Media24si\\UpnGenerator\\": "src/"
+    }
+  }
+}
