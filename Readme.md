@@ -8,7 +8,7 @@ Prikaže podatke za nakazilo in UPN nalog s QR kodo ob koncu naročila, v emailu
 
 **Prenesi [zadnjo verzijo](https://github.com/woocart/woocommerce-upn/releases/latest) »**
 
-Za delovanje potrebuje nastavljen BACS (Direct Bank Transfer payment modul). 
+Za delovanje potrebuje nastavljen BACS (Direct Bank Transfer plačilni modul). 
 
 Pozor! IBAN mora biti pravilen drugače se obrazec ne prikaže.
 
