@@ -15,7 +15,7 @@ Pozor! IBAN mora biti pravilen drugače se obrazec ne prikaže.
 Za prilagajanje se lahko uprabi naslednje filtre:
 
 ```php
-apply_filters('upn_code', "OTHR");
-apply_filters('upn_reference', "SI00 %s");
-apply_filters('upn_purpose', 'Plačilo naročila %s');
+apply_filters('upn_code', function(){return "OTHR";});
+apply_filters('upn_reference', function(){return "SI00 %s";});
+apply_filters('upn_purpose', function(){return 'Plačilo naročila %s';});
 ```
