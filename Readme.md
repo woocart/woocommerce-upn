@@ -22,4 +22,4 @@ apply_filters('upn_purpose', function(){return 'Plačilo naročila %s';});
 
 ## Razvijalec
 
-[WooCart](https://woocart.com/) je specializirano gostovanje za WooCommerce spletne trgovine.
+[WooCart](https://woocart.com/) je specializirano gostovanje za WooCommerce spletne trgovine. [Kontakt](https://woocart.com/contact).
