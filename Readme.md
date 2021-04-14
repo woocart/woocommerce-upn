@@ -12,7 +12,7 @@ Za delovanje potrebuje nastavljen BACS (Direct Bank Transfer plačilni modul).
 
 Pozor! IBAN mora biti pravilen drugače se obrazec ne prikaže.
 
-Za prilagajanje se lahko uprabi naslednje filtre:
+Za prilagajanje se lahko uporabi naslednje filtre:
 
 ```php
 apply_filters('upn_code', function(){return "OTHR";});
