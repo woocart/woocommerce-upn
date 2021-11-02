@@ -3,7 +3,7 @@
 Plugin Name: UPN plačilni nalog
 Plugin URI: https://woocart.com
 Description: Doda UPN plačilni nalog s QR kodo v vašo WooCommerce trgovino.
-Version: 1.0.1
+Version: 1.1.0
 Author: WooCart
 Author Email: info@woocart.com
 License: GPLv2 or later
@@ -164,7 +164,7 @@ namespace WooCart\UPNalog {
         /**
          * Shortcode helper.
          */
-        public function upn_current_order()
+        public function upn_order_awaiting_payment()
         {
             // Only show if not paid yet
             $order_id = \WC()->session->get('order_awaiting_payment');
