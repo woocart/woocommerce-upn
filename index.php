@@ -16,7 +16,7 @@ namespace WooCart\UPNalog {
     class UPN
     {
         public $account_details;
-		public $instructions;
+        public $instructions;
 
         public function __construct()
         {
@@ -31,18 +31,18 @@ namespace WooCart\UPNalog {
                 remove_action('woocommerce_thankyou_bacs', array($available_gateways['bacs'], 'thankyou_page'));
                 remove_action('woocommerce_email_before_order_table', array($available_gateways['bacs'], 'email_instructions'), 10, 3);
                 $this->account_details = $available_gateways['bacs']->account_details;
-				$this->instructions = $available_gateways['bacs']->instructions;
+                $this->instructions = $available_gateways['bacs']->instructions;
                 add_action('woocommerce_email_before_order_table', array($this, 'upn_instructions'), 10, 3);
                 add_action('woocommerce_order_details_after_customer_details', array($this, 'upn_page'), 20);
+                add_shortcode('upn_order_awaiting_payment', array($this, 'upn_order_awaiting_payment'));
             }
-
         }
 
         public function genUPN($order)
         {
 
             if (empty($this->account_details)) {
-				throw Exception("Empty accoutn details for BACS.");
+                throw Exception("Empty accoutn details for BACS.");
                 return;
             }
 
@@ -56,8 +56,11 @@ namespace WooCart\UPNalog {
                 ->setPayerPost(sprintf("%s %s", $order->get_billing_postcode(), $order->get_billing_city()))
                 ->setReceiverName($bacs_account->account_name)
                 ->setReceiverAddress(WC()->countries->get_base_address())
-                ->setReceiverPost(sprintf("%s %s", WC()->countries->get_base_city(),
-                    WC()->countries->get_base_postcode()))
+                ->setReceiverPost(sprintf(
+                    "%s %s",
+                    WC()->countries->get_base_city(),
+                    WC()->countries->get_base_postcode()
+                ))
                 ->setReceiverIban(preg_replace('/\s+/', '', $bacs_account->iban))
                 ->setAmount($order->get_total())
                 ->setCode(apply_filters('upn_code', "OTHR"))
@@ -90,16 +93,16 @@ namespace WooCart\UPNalog {
 
             $bacs_account = (object) $bacs_accounts[0];
 
-            ?>
-                <table class="woocommerce-table shop_table">
+?>
+            <table class="woocommerce-table shop_table">
                 <tbody>
                     <tr>
                         <th>Prejemnik</th>
                         <td>
 
-                        <?php echo wptexturize(wp_kses_post($bacs_account->account_name)); ?></br>
-                        <?php echo wptexturize(wp_kses_post(WC()->countries->get_base_address())); ?></br>
-                        <?php echo wptexturize(wp_kses_post(sprintf("%s %s", WC()->countries->get_base_city(), WC()->countries->get_base_postcode()))); ?>
+                            <?php echo wptexturize(wp_kses_post($bacs_account->account_name)); ?></br>
+                            <?php echo wptexturize(wp_kses_post(WC()->countries->get_base_address())); ?></br>
+                            <?php echo wptexturize(wp_kses_post(sprintf("%s %s", WC()->countries->get_base_city(), WC()->countries->get_base_postcode()))); ?>
 
                         </td>
                     </tr>
@@ -118,8 +121,8 @@ namespace WooCart\UPNalog {
 
                 </tbody>
             </table>
-            <?php
-}
+<?php
+        }
 
         /**
          * Add content to the WC emails.
@@ -138,7 +141,6 @@ namespace WooCart\UPNalog {
                 $this->genUPNDescription($order);
                 $this->genUPN($order);
             }
-
         }
 
         /**
@@ -157,9 +159,19 @@ namespace WooCart\UPNalog {
             if ($this->instructions) {
                 echo wp_kses_post(wpautop(wptexturize(wp_kses_post($this->instructions))));
             }
-
         }
 
+        /**
+         * Shortcode helper.
+         */
+        public function upn_current_order()
+        {
+            // Only show if not paid yet
+            $order_id = \WC()->session->get('order_awaiting_payment');
+            if ($order_id != null) {
+                $this->upn_page($order_id);
+            }
+        }
     }
 
     \add_action("woocommerce_init", function () {
