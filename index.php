@@ -85,9 +85,9 @@ namespace WooCart\UPNalog {
 
         public function genUPNDescription($order)
         {
-            if (empty($this->account_details)) {
-                return;
-            }
+            // if (empty($this->account_details)) {
+            //     return;
+            // }
 
             $bacs_accounts = apply_filters('woocommerce_bacs_accounts', $this->account_details, $order->get_id());
 
