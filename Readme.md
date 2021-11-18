@@ -20,6 +20,19 @@ apply_filters('upn_reference', function(){return "SI00 %s";});
 apply_filters('upn_purpose', function(){return 'Plačilo naročila %s';});
 ```
 
+Če želite, da se UPN nalog prikazuje tudi za neprijavljene uporabnike, v functions.php dodatje sledeče.
+
+```php
+add_action( 'woocommerce_thankyou', 'adding_customers_details_to_thankyou', 10, 1 );
+function adding_customers_details_to_thankyou( $order_id ) {
+    // Only for non logged in users
+    if ( ! $order_id || is_user_logged_in() ) return;
+
+    $order = wc_get_order($order_id); // Get an instance of the WC_Order object
+
+    wc_get_template( 'order/order-details-customer.php', array('order' => $order ));
+}
+```
 ## Razvijalec
 
 [WooCart](https://woocart.com/) je specializirano gostovanje za WooCommerce spletne trgovine. [Kontakt](https://woocart.com/contact).
