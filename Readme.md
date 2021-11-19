@@ -20,7 +20,7 @@ apply_filters('upn_reference', function(){return "SI00 %s";});
 apply_filters('upn_purpose', function(){return 'Plačilo naročila %s';});
 ```
 
-Če želite, da se UPN nalog prikazuje tudi za neprijavljene uporabnike, v functions.php dodatje sledeče.
+Pri page builder Elementor se UPN za neprijavljene uproabnike ne prikazuje. Če želite, da se UPN nalog prikazuje tudi za neprijavljene uporabnike, v functions.php dodatje sledeče.
 
 ```php
 add_action( 'woocommerce_thankyou', 'adding_customers_details_to_thankyou', 10, 1 );
